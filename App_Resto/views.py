@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.urls import is_valid_path
 
-from App_Resto.forms import ConsultaFormulario
-from App_Resto.models import Productos
+from App_Resto.forms import ContactoFormulario
+from App_Resto.models import Consultas, Productos
 
 # Create your views here.
 def inicio(self):
@@ -16,7 +17,25 @@ def consultas(self):
 
 def contacto(request):
     if request.method=="POST":
-        return render(request, "gracias.html")
+
+        miFormulario = ContactoFormulario(request.POST)
+
+        if miFormulario.is_valid():
+
+            data = miFormulario.cleaned_data
+
+            consulta = Consultas(nombre=data.POST['nombre'], asunto=data.POST['asunto'], email=data.POST['email'], mensaje=data.POST['mensaje'])
+
+            consulta.save()
+
+            return render(request, "gracias.html")
+        
+    else:
+
+        miFormulario = ContactoFormulario()
+
+        return render(request, "contacto.html", {"miFormulario": miFormulario})
+
     
     return render(request, "contacto.html")
 

@@ -1,4 +1,5 @@
 from tabnanny import verbose
+from unittest.util import _MAX_LENGTH
 from django.db import models
 
 # Create your models here.
@@ -40,3 +41,16 @@ class Pedidos(models.Model):
         verbose_name = 'Pedido'
         verbose_name_plural = 'Pedidos'
 
+class Consultas(models.Model):
+    
+    nombre = models.CharField(max_length=30)
+    asunto = models.CharField(max_length=50)
+    email = models.EmailField()
+    mensaje = models.CharField(max_length=150)
+
+    def __str__(self) -> str:
+        return f'{self.nombre} - {self.aunto} - {self.email} - {self.mensaje}'
+
+    class Meta():
+        verbose_name = 'Consulta'
+        verbose_name_plural = 'Consultas'

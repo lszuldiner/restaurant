@@ -1,6 +1,8 @@
 from django import forms
 
-class ConsultaFormulario(forms.Form):
+class ContactoFormulario(forms.Form):
 
     nombre = forms.CharField()
-    pregunta = forms.CharField()
+    asunto = forms.CharField()
+    email = forms.EmailField()
+    mensaje = forms.CharField()
