@@ -4,9 +4,27 @@
 
 
 {% block bloqueQueCambia %}
-    <h1>Seccion de Consultas</h1>
+<title>
+    Contactar
+</title>
 
-    <p>Bienvenido a la seccion de consultas</p>
+<body>
+
+    <h1>
+        CONTACTANOS
+    </h1>
+<br>
+</body>
+    <form action= "{% url 'Consultas' %}"  method="POST">{% csrf_token %}
+        <h6>Nombre: <input type="text" name="nombre"></h6>
+        <h6>Asunto: <input type="text" name="asunto"></h6>
+        <h6>Email: <input type="text" name="email"></h6>
+        <h6>Mensaje: <textarea name="mensaje" rows="2" cols="50"></textarea></h6>
+        <br>    
+        
+        <input type="submit" name="Enviar">
+
+        
+    </form>
 
 {% endblock bloqueQueCambia %}
-    

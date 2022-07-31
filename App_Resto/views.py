@@ -13,7 +13,7 @@ def menu(self):
     return render(self, "menu.html")
 
 def consultas(self):
-    return render(self, "contacto.html")
+    return render(self, "consultas.html")
 
 def contacto(request):
     if request.method=="POST":
@@ -24,20 +24,20 @@ def contacto(request):
 
             data = miFormulario.cleaned_data
 
-            consulta = Consultas(nombre=data.POST['nombre'], asunto=data.POST['asunto'], email=data.POST['email'], mensaje=data.POST['mensaje'])
+            consultas = Consultas(nombre=data.POST['nombre'], asunto=data.POST['asunto'], email=data.POST['email'], mensaje=data.POST['mensaje'])
 
-            consulta.save()
+            consultas.save()
 
             return render(request, "gracias.html")
-        
+    
     else:
 
         miFormulario = ContactoFormulario()
-
-        return render(request, "contacto.html", {"miFormulario": miFormulario})
-
+        
     
-    return render(request, "contacto.html")
+    return render(request, "consultas.html", {"miFormulario": miFormulario})
+    
+
 
 def nosotros(self):
     return render(self, "nosotros.html")

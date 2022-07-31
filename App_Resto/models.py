@@ -49,7 +49,7 @@ class Consultas(models.Model):
     mensaje = models.CharField(max_length=150)
 
     def __str__(self) -> str:
-        return f'{self.nombre} - {self.aunto} - {self.email} - {self.mensaje}'
+        return f'{self.nombre} - {self.asunto} - {self.email} - {self.mensaje}'
 
     class Meta():
         verbose_name = 'Consulta'
