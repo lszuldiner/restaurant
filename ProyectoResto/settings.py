@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'App_Resto'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'ProyectoResto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [r'C:\Users\Usuario\Documents\Coderhouse\ProyectoResto\ProyectoResto\App_Resto\templates'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

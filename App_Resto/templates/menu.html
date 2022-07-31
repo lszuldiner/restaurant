@@ -1,0 +1,120 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block bloqueQueCambia %}
+
+
+
+<header class="masthead" style="background-image: url('{% static 'assets/img/comida.jpg'%}')">
+  <div class="container position-relative">
+      <div class="row justify-content-center">
+          <div class="col-xl-6">
+              <div class="text-center text-white">
+                  <!-- Page heading-->
+                  <h1 class="mb-5">MENU</h1>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+
+
+<body>
+  Busca algun plato especifico de nuestro menu
+</body>
+  <form action= "{% url 'Buscar' %}"  method="GET">{% csrf_token %}
+      <input type="text" name="prd">
+      <input type="submit" name="buscar">
+  </form>
+
+    <section class="NovidadesSection">
+        <main class="mainDestacados">
+        <br>
+          <h2>ENTRADAS</h2>
+          <section class="containerProdutos">
+            <div class="produto">
+              <div class="productDescription">
+                <h3 class="produto__title">Hummus cremoso con pimentón y aceite de oliva</h3>
+                <spam class="produto__price">$850.00</spam>
+              </div>
+              <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+            </div>
+            <div class="produto">
+              <div class="productDescription">
+                <h3 class="produto__title">Tartar de ciervo con mayonesa japonesa y kimchi sobre hoja de shizo dip de
+                    nuoc cham</h3>
+                <spam class="produto__price">$1040.00</spam>
+              </div>
+              <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+            </div>
+            <div class="produto">
+              <div class="productDescription">
+                <h3 class="produto__title">Ensalada de farfalaj, chauchas, menta, pasas de uva y queso de cabra</h3>
+                <spam class="produto__price">$1250.00</spam>
+              </div>
+              <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+            </div>
+            
+            <br>
+
+            <section class="NovidadesSection">
+                <main class="mainDestacados">
+                  <h2>PRINCIPALES</h2>
+                  <section class="containerProdutos">
+                    <div class="produto">
+                      <div class="productDescription">
+                        <h3 class="produto__title">Bife de chorizo a la pimienta / A la parrilla. Con puré de coliflor y crema de pimienta</h3>
+                        <spam class="produto__price">$2800.00</spam>
+                      </div>
+                      <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+                    </div>
+                    <div class="produto">
+                      <div class="productDescription">
+                        <h3 class="produto__title">Arroz de Calamar / Con azafrán, morcilla y alioli</h3>
+                        <spam class="produto__price">$2750.00</spam>
+                      </div>
+                      <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+                    </div>
+                    <div class="produto">
+                      <div class="productDescription">
+                        <h3 class="produto__title">Girgolas doradas con pure de castañas de cajú, reducción de oporto y
+                            pesto de pasas y nueces</h3>
+                        <spam class="produto__price">$2100.00</spam>
+                      </div>
+                      <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+                    </div>
+                    
+                    <br>
+
+                    <section class="NovidadesSection">
+                        <main class="mainDestacados">
+                          <h2>POSTRES</h2>
+                          <section class="containerProdutos">
+                            <div class="produto">
+                              <div class="productDescription">
+                                <h3 class="produto__title">Paris-brest crocante relleno de semiffredo de praline con salsa de caramelo y sal</h3>
+                                <spam class="produto__price">$890.00</spam>
+                              </div>
+                              <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+                            </div>
+                            <div class="produto">
+                              <div class="productDescription">
+                                <h3 class="produto__title">Cremoso de chocolate con corazón de avellanas, crumble de cacao y
+                                    crema de café</h3>
+                                <spam class="produto__price">$980.00</spam>
+                              </div>
+                              <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+                            </div>
+                            <div class="produto">
+                              <div class="productDescription">
+                                <h3 class="produto__title">Postre tibio de banana, pera y canela con helado de vainilla y
+                                    crema fresca</h3>
+                                <spam class="produto__price">$1200.00</spam>
+                              </div>
+                              <a href=""><i class="produto__icon fas fa-cart-plus"></i></a>
+                            </div>
+
+{% endblock bloqueQueCambia %}

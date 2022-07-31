@@ -1,0 +1,34 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+
+{% block bloqueQueCambia %}
+
+    <header class="masthead" style="background-image: url('{% static 'assets/img/comida.jpg'%}')">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">MENU</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header>
+
+    {% if productos %}
+        <ul>
+            {% for producto in productos %}
+                <li>
+                    Producto encontrado: {{producto.nombre}} - Precio: {{producto.precio}}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        
+        <p>No hubo coincidencias</p>
+    {% endif %}
+
+{% endblock bloqueQueCambia %}
